@@ -1,0 +1,291 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Net Seva Kendra</title>
+    <link rel="icon" href="{% static 'logo/logo.jpg' %}" type="image/x-icon" />
+    <link rel="stylesheet" href="{% static 'css/bootstrap.css' %}">
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo">
+
+            <div class="d-flex pt-1">
+
+                <img src="{% static 'logo/logo.png' %}" alt="net seva kendra" width="200px" class="p-2 rounded ">
+                <!-- <p class="text-white align-self-center p-2" style="font-family:'Poppins', sans-serif; font-size: 35px;">
+                    Net Seva
+                    Kendra</p> -->
+            </div>
+
+        </div>
+        <ul class="nav-links">
+            <li><a href="{% url 'home' %}">Home</a></li>
+            <li><a href="{% url 'aboutUs' %}">About Us</a></li>
+            <li><a href="#contactUs">Contact Us</a></li>
+        </ul>
+        <div class="burger">
+            <div class="line1"></div>
+            <div class="line2"></div>
+            <div class="line3"></div>
+        </div>
+    </nav>
+
+
+
+    {% block content %}
+
+    {% endblock %}
+    <footer class="bg-dark py-5" id="contactUs">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-7 mb-3">
+                    <div class="text-center">
+                        <p class="text-muted para-desc mx-auto mt-3">Net seva kendra</p>
+                        <p class="text-muted para-desc mx-auto mt-3">Market Road, Municipality Building,</p>
+                        <p class="text-muted para-desc mx-auto mt-3">Near Village Office, Vatakara</p>
+                        <p class="text-muted para-desc mx-auto mt-3">Kozhikode</p>
+                        <ul class="list-unstyled social-icon social mb-0 mt-4">
+                            <li class="list-inline-item"><a href="javascript:void(0)" class="rounded"><svg
+                                        xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                        class="bi bi-telephone" viewBox="0 0 16 16">
+                                        <path
+                                            d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
+                                    </svg></a>
+                            </li>
+                            <li class="list-inline-item">
+                                <p class="text-muted  mx-auto mt-3">9946100701</p>
+                            </li>
+                        </ul>
+
+
+                    </div>
+                </div>
+                <!--end col-->
+            </div>
+            <!--end row-->
+        </div>
+        <!--end container-->
+    </footer>
+    <footer class=" footer-bar bg-dark">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-sm-12 footer-bar">
+                    <div class="text-sm-left">
+                        <p class="mb-0 footer-text para-desc mx-auto text-center">&copy; All Rights
+                            Reserved <i class="mdi mdi-heart text-danger"></i></p>
+                    </div>
+                </div>
+                <!--end col-->
+
+
+                <!--end col-->
+            </div>
+            <!--end row-->
+        </div>
+        <!--end container-->
+    </footer>
+</body>
+
+
+<style>
+    /* ===navbar=== */
+    nav {
+
+        top: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        min-height: 8vh;
+        background-color: #212529;
+        font-family: "Poppins", sans-serif;
+    }
+
+    .logo {
+        color: rgb(226, 226, 226);
+        text-transform: uppercase;
+        letter-spacing: 0px;
+        font-size: 20px;
+    }
+
+    .nav-links {
+        display: flex;
+        justify-content: space-around;
+        width: 30%;
+    }
+
+    .nav-links li {
+        list-style: none;
+    }
+
+    .nav-links li:hover {
+        border-bottom: 2px solid rgb(255, 255, 255);
+        transition: all 800 ease-out;
+
+
+    }
+
+    .nav-links a {
+        color: rgb(226, 226, 226);
+        text-decoration: none;
+        letter-spacing: 3px;
+        font-weight: bold;
+        font-size: 14px;
+    }
+
+    .burger {
+        display: none;
+    }
+
+    .burger div {
+        width: 25px;
+        height: 3px;
+        background-color: rgb(226, 226, 226);
+        margin: 5px;
+        transition: all 0.3s ease;
+    }
+
+    @media screen and (max-width: 1024px) {
+        .nav-links {
+            width: 60%;
+        }
+    }
+
+    @media screen and (max-width: 768px) {
+        body {
+            overflow-x: hidden;
+        }
+
+        .nav-links {
+            position: fixed;
+            right: 0px;
+            height: 92vh;
+            top: 8vh;
+            background-color: #212529;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 50%;
+            transform: translateX(100%);
+            transition: transform 0.5s ease-in;
+        }
+
+        .nav-links li {
+            opacity: 0;
+        }
+
+        .burger {
+            display: block;
+            cursor: pointer;
+        }
+    }
+
+    .nav-active {
+        transform: translateX(0%);
+    }
+
+    @keyframes navLinkFade {
+        from {
+            opacity: 0;
+            transform: translateX(50px);
+        }
+
+        to {
+            opacity: 1;
+            transform: translateX(0);
+        }
+    }
+
+    .toggle .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .toggle .line2 {
+        opacity: 0;
+    }
+
+    .toggle .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+
+    /*--- footer--- */
+    .social-icon li a {
+        color: #3c4858;
+        border: 1px solid #3c4858;
+        display: inline-block;
+        height: 32px;
+        text-align: center;
+        font-size: 15px;
+        width: 32px;
+        line-height: 27px;
+        -webkit-transition: all 0.4s ease;
+        transition: all 0.4s ease;
+        overflow: hidden;
+        position: relative;
+    }
+
+    .rounded {
+        border-radius: 5px !important;
+    }
+
+    footer {
+        position: relative;
+        padding: 50px 0;
+    }
+
+    footer .logo-footer {
+        font-size: 28px;
+    }
+
+    footer.footer-bar {
+        padding: 30px 0;
+        border-top: 1px solid #495057;
+    }
+
+    footer .footer-text {
+        color: #adb5bd;
+        -webkit-transition: all 0.5s ease;
+        transition: all 0.5s ease;
+    }
+
+    footer .footer-text:hover {
+        color: #dee2e6;
+    }
+</style>
+<script>
+    function navSlide() {
+        const burger = document.querySelector(".burger");
+        const nav = document.querySelector(".nav-links");
+        const navLinks = document.querySelectorAll(".nav-links li");
+
+        burger.addEventListener("click", () => {
+            //Toggle Nav
+            nav.classList.toggle("nav-active");
+
+            //Animate Links
+            navLinks.forEach((link, index) => {
+                if (link.style.animation) {
+                    link.style.animation = ""
+                } else {
+                    link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.5}s`;
+                }
+            });
+            //Burger Animation
+            burger.classList.toggle("toggle");
+        });
+
+    }
+
+    navSlide();
+</script>
+
+</html>
